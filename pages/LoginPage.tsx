@@ -1,6 +1,8 @@
 import React, { ChangeEvent, MouseEvent, useState } from 'react'
 import axios from 'axios'
 import Link from 'next/link'
+import Image from 'next/image'
+import styles from '../styles/Home.module.css'
 
 const LoginPage = () => {
   const [apiData, setApiData] = useState([])
@@ -38,7 +40,15 @@ const LoginPage = () => {
   }
 
   return (
-    <>
+    <section className={styles.container}>
+      <div className={styles.image_wrapper}>
+        <Image
+          src="/assets/logn-image.jpg"
+          width="360"
+          height="250"
+          layout="responsive"
+        />
+      </div>
       <div>
         <h1>Login Account</h1>
         <form onSubmit={handleSubmit}>
@@ -74,7 +84,7 @@ const LoginPage = () => {
           </Link>
         </form>
       </div>
-    </>
+    </section>
   )
 }
 
