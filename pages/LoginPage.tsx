@@ -3,6 +3,7 @@ import axios from 'axios'
 import Link from 'next/link'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
+import Button from './components/Button'
 
 const LoginPage = () => {
   const [apiData, setApiData] = useState([])
@@ -40,49 +41,49 @@ const LoginPage = () => {
   }
 
   return (
-    <section className={styles.container}>
+    <section className={styles.containerTest}>
       <div className={styles.image_wrapper}>
-        <Image
-          src="/assets/logn-image.jpg"
-          width="360"
-          height="250"
-          layout="responsive"
-        />
+        <Image src="/assets/logn-image.jpg" layout="fill" objectFit="cover" />
       </div>
       <div className={styles.login_section}>
-        <h1>Login Account</h1>
-        <form onSubmit={handleSubmit}>
-          <label htmlFor="email">
-            Email
+        <div className={styles.form_wrapper}>
+          <h1>Login Account</h1>
+          <form onSubmit={handleSubmit} className={styles.form}>
+            <label htmlFor="email" className={styles.label}>
+              Email
+            </label>
             <input
               type="email"
               name="email"
               value={data.email}
               onChange={handleChange}
+              className={styles.input}
             />
-          </label>
-          <label htmlFor="password">
-            Password
+            <label htmlFor="password" className={styles.label}>
+              Password
+            </label>
             <input
               type="password"
               name="password"
               value={data.password}
               onChange={handleChange}
+              className={styles.input}
             />
-          </label>
-          <label htmlFor="whitelabelId">
-            Id
+            <label htmlFor="whitelabelId" className={styles.label}>
+              Id
+            </label>
             <input
               type="text"
               name="whitelabelId"
               value={data.whitelabelId}
               onChange={handleChange}
+              className={styles.input}
             />
-          </label>
-          <Link href={'/LoggedPage'} passHref>
-            <button type="submit">Login</button>
-          </Link>
-        </form>
+            <Link href={'/BenefitCards'} passHref>
+              <Button>Login</Button>
+            </Link>
+          </form>
+        </div>
       </div>
     </section>
   )
