@@ -49,7 +49,7 @@ const LoginPage = () => {
           layout="responsive"
         />
       </div>
-      <div>
+      <div className={styles.login_section}>
         <h1>Login Account</h1>
         <form onSubmit={handleSubmit}>
           <label htmlFor="email">
