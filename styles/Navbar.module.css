@@ -1,0 +1,140 @@
+@media ( min-width: 360px ) {
+  .header{
+    box-shadow: 0px 1px 1px rgba(0,0,0,.1);
+    width: 100%;
+    display: flex;
+    background-color: #fdffff;
+    top: 0px;
+    padding: 0 10px;
+  }
+
+  .logoAnimal{
+    width: 100px;
+    height: 100px;
+  }
+
+  .nav{
+    height: 12rem;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .nav_wrapper{
+    display: flex;
+    justify-content: flex-end;
+    padding: 0 10px;
+    align-items: center;
+  }
+
+  .nav_wrapper > svg {
+    margin: 0 10px;
+  }
+
+  .logo{
+    padding: 0.5rem 0;
+  }
+
+  .login{
+    display: flex;
+    align-items: center;
+    color: #333;
+  }
+
+  .form_wrapper {
+    width: 100%;
+  }
+
+  .search_form{
+    width: 80%;
+    margin: 2px auto;
+  }
+
+  .search_input {
+    color: var(--primary-color);
+    display: block;
+    width: 100%;
+    font-size: 1rem;
+    padding: 0.8rem;
+    margin-right: 0.5rem;
+    background: transparent;
+    border: none;
+  }
+
+  .input_wrapper {
+    display: flex;
+    align-items: center;
+    border: 1px solid var(--primary-color);
+    border-radius: .4rem;
+    background: transparent;
+    padding-right: 0.7rem;
+  }
+     
+}
+
+@media ( min-width: 1366px ) {
+  
+  .nav{
+    height: 12rem;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 5rem;
+  }
+
+  .nav_wrapper{
+    display: flex;
+    justify-content: flex-end;
+    padding: 0 10px;
+    align-items: center;
+  }
+
+  .nav_wrapper > svg {
+    margin: 0 10px;
+  }
+
+  .logo{
+    padding: 0.5rem 0;
+  }
+
+  .login{
+    display: flex;
+    align-items: center;
+    color: #333;
+  }
+
+  .form_wrapper {
+    display: flex;
+    align-items: center;
+    width: 60%;
+  }
+
+  .search_form{
+    width: 80%;
+    margin: 2px auto;
+  }
+
+  .search_input {
+    color: var(--primary-color);
+    display: block;
+    width: 100%;
+    font-size: 1rem;
+    padding: 0.8rem;
+    margin-right: 0.5rem;
+    background: transparent;
+    border: none;
+  }
+
+  .input_wrapper {
+    display: flex;
+    align-items: center;
+    border: 1px solid var(--primary-color);
+    border-radius: .4rem;
+    background: transparent;
+    padding-right: 0.7rem;
+  }
+     
+}
