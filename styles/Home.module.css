@@ -1,34 +1,107 @@
 
-@media ( min-width: 1200px ) {
+@media ( min-width: 360px ) {
 
-  .container{
+  .containerTest{
     width: 100%;
     display: flex;
     flex-direction: column;
-    margin-top: 2rem;
+    margin-top: 12rem;
+    
   }
 
   .image_wrapper {
-      width: 100%;
-      height: 100px;
-      object-fit: contain;
-      margin-top: 2rem;
+    width: 100%;
+    height: 50vh;
+    position: relative;
+    object-fit: cover;
     }
+
+    .form_wrapper{
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .form {
+      width: 100%;
+      display: flex;
+      flex-direction:column;
+      justify-content: center;
+      padding: 0 3rem;
+      padding-bottom: 2rem;
+    }
+
+    .form > h1 {
+      margin: 0 auto;
+    }
+  
+    .label{
+      display: block;
+      font-size: 1rem;
+      line-height: 1;
+      padding: 0.5rem 0;
+    }
+  
+    .input{
+      color: var(--primary-color);
+      border: 1px solid var(--primary-color);
+      display: block;
+      margin-bottom: 3rem;
+      width: 100%;
+      font-size: 1rem;
+      padding: 0.8rem;
+      border-radius: .4rem;
+      }
 }
 
+@media ( min-width: 1000px ) {
+
+  .image_wrapper {
+    height: 70vh;
+  }
+
+}
 
 @media ( min-width: 1366px ) {
 
-  .container{
+  .containerTest{
+    width: 100%;
+    height: 100%;
+    display: grid; 
+    grid-template-columns: 0.7fr 0.3fr; 
+    grid-template-rows: 0.7fr 0.6fr;
+  }
+
+  .form_wrapper{
+    height: 100%;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
+    margin-top: 3rem;
+    grid-column-start: 2; 
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 4;
+  }
+
+  .form {
+    width: 100%;
+    display: flex;
+    flex-direction:column;
+    padding: 0 3rem;
   }
 
   .image_wrapper {
+    
+      grid-column-start: 1; 
+      grid-column-end: 2;
+      grid-row-start: 1;
+      grid-row-end: 4;    
       width: 100%;
-      height: 100px;
-      object-fit: contain;
-      margin-top: 2rem;
-    }
+      height: 100%;
+          
+  }
 }
