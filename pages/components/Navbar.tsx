@@ -9,9 +9,11 @@ import {
   FaSearch
 } from 'react-icons/fa'
 import useMedia from '../helper/useMedia'
+import { useUrbisContext } from '../context/context'
 
 const Navbar = () => {
   const desktop = useMedia('(max-width: 1366px)')
+  const { showModal } = useUrbisContext()
 
   return (
     <header className={styles.header}>
@@ -34,7 +36,7 @@ const Navbar = () => {
               <IconContext.Provider
                 value={{ size: '25px', color: 'var(--primary-color)' }}
               >
-                <FaRegBell />
+                <FaRegBell /> {showModal ? 'ativo' : ''}
               </IconContext.Provider>
             </Link>
             <Link href={'/LoginPage'}>
