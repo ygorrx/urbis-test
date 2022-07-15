@@ -3,12 +3,14 @@ import styles from '../styles/BenefitCards.module.css'
 import Button from './components/Button'
 import axios from 'axios'
 import Modal from './components/Modal'
+import { useUrbisContext } from './context/context'
 
 const LoggedPage = () => {
-  const [benefitList, setBenefitList] = useState([])
+  //const [benefitList, setBenefitList] = useState([])
   const [coupon, setCoupon] = useState(false)
-  const [showModal, setShowModal] = useState(false)
-  console.log(showModal)
+  const { benefitList, setBenefitList, showModal, setShowModal } =
+    useUrbisContext()
+  console.log('benefit list contexto', benefitList)
 
   useEffect(() => {
     const token = localStorage.getItem('token')
