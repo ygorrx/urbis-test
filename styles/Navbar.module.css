@@ -73,6 +73,103 @@
     background: transparent;
     padding-right: 0.7rem;
   }
+
+  .notification_wrapper {
+    position: relative;
+  }
+  
+  .notification {
+    opacity: 1;
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    top: 7%;
+    right: 4%;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    background: red;
+   
+}
+
+.notification_counter{
+  position: relative;
+}
+
+.notification::before{
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #f72918;
+  border-radius: 50%;
+  z-index: 0;
+  transform: scale(0);
+  animation: bounce 0.3s;
+}
+
+@keyframes bounce {
+  0% {
+    transform: scale(0);
+  }
+
+  14% {
+    transform: scale(1.15);
+  }
+
+  28% {
+    transform: scale(1);
+  }
+
+  42% {
+    transform: scale(1.15);
+  }
+
+  70% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.btn_notification {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.notes_menu_container{
+    width: 100%;
+    padding: 2rem 1rem;
+    margin: 2rem 0;
+    height: 150px;
+    background: var(--secondary-color);
+  
+}
+
+.notes_menu_container > h1 {
+  font-size: 12px;
+  color: white;
+}
+
+.notes_menu_open{
+    width: 200px;
+    height: 200px;
+    display: block;
+    position: absolute;
+    top: 50px;
+    right: 50px;
+    padding: 0 1rem;
+    background: white;
+    box-shadow: 0 1px 2px rgba(0,0,0,.2);
+    border-radius: .2rem;
+    transform: translateX(-10px );
+    opacity: 1;
+ }
      
 }
 
@@ -88,6 +185,7 @@
   }
 
   .nav_wrapper{
+    width: 120px;
     display: flex;
     justify-content: flex-end;
     padding: 0 10px;
@@ -139,4 +237,67 @@
     padding-right: 0.7rem;
   }
      
+  .notification_wrapper {
+    position: relative;
+    padding-top: 0.2rem;
+  }
+  
+  .notification {
+    opacity: 1;
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    top: 7%;
+    right: 4%;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    background: red;
+   
+}
+
+.notification_counter{
+  position: relative;
+}
+
+.notification::before{
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #f72918;
+  border-radius: 50%;
+  z-index: 0;
+  transform: scale(0);
+  animation: bounce 0.3s;
+}
+
+@keyframes bounce {
+  0% {
+    transform: scale(0);
+  }
+
+  14% {
+    transform: scale(1.15);
+  }
+
+  28% {
+    transform: scale(1);
+  }
+
+  42% {
+    transform: scale(1.15);
+  }
+
+  70% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
 }
