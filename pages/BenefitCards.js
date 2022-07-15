@@ -5,8 +5,6 @@ import axios from 'axios'
 import { useUrbisContext } from './context/context'
 
 const LoggedPage = () => {
-  //const [benefitList, setBenefitList] = useState([])
-  const [coupon, setCoupon] = useState(false)
   const { benefitList, setBenefitList, notification, setNotification } =
     useUrbisContext()
   console.log('benefit list contexto', benefitList)
