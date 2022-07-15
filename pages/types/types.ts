@@ -17,4 +17,6 @@ export interface UrbisContextProps {
   setBenefitList: React.Dispatch<React.SetStateAction<never[]>>
   showModal: boolean
   setShowModal: React.Dispatch<React.SetStateAction<boolean>>
+  notification: boolean
+  setNotification: React.Dispatch<React.SetStateAction<boolean>>
 }
