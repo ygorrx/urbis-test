@@ -1,11 +1,12 @@
-import React, { ChangeEvent, MouseEvent, useState } from 'react'
+import React, { ChangeEvent, MouseEvent, useEffect, useState } from 'react'
 import axios from 'axios'
-import Link from 'next/link'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import Button from './components/Button'
+import { useRouter } from 'next/router'
 
 const LoginPage = () => {
+  const router = useRouter()
   const [apiData, setApiData] = useState([])
   const [data, setData] = useState({
     email: '',
@@ -37,8 +38,16 @@ const LoginPage = () => {
         console.log(response.data)
         setApiData(response.data)
         console.log(apiData)
+        localStorage.setItem('token', response.data.access_token)
       })
   }
+
+  useEffect(() => {
+    const token = localStorage.getItem('token')
+    if (apiData && token) {
+      router.push('/BenefitCards')
+    }
+  }, [apiData, router])
 
   return (
     <section className={styles.containerTest}>
@@ -79,9 +88,8 @@ const LoginPage = () => {
               onChange={handleChange}
               className={styles.input}
             />
-            <Link href={'/BenefitCards'} passHref>
-              <Button>Login</Button>
-            </Link>
+
+            <Button>Login</Button>
           </form>
         </div>
       </div>
