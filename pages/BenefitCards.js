@@ -2,13 +2,12 @@ import React, { useState, useEffect } from 'react'
 import styles from '../styles/BenefitCards.module.css'
 import Button from './components/Button'
 import axios from 'axios'
-import Modal from './components/Modal'
 import { useUrbisContext } from './context/context'
 
 const LoggedPage = () => {
   //const [benefitList, setBenefitList] = useState([])
   const [coupon, setCoupon] = useState(false)
-  const { benefitList, setBenefitList, showModal, setShowModal } =
+  const { benefitList, setBenefitList, notification, setNotification } =
     useUrbisContext()
   console.log('benefit list contexto', benefitList)
 
@@ -30,12 +29,11 @@ const LoggedPage = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    setShowModal(true)
+    setNotification(true)
   }
 
   return (
     <div className={styles.container}>
-      {showModal && <Modal setOpenModal={setShowModal} />}
       {benefitList.length
         ? benefitList.map((card, key) => {
             return (
