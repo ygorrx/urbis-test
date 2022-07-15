@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import styles from '../../styles/Navbar.module.css'
 import Link from 'next/link'
 import Image from 'next/image'
@@ -10,13 +11,34 @@ import {
 } from 'react-icons/fa'
 import useMedia from '../helper/useMedia'
 import { useUrbisContext } from '../context/context'
+import Button from './Button'
+import Modal from './Modal_1'
 
 const Navbar = () => {
   const desktop = useMedia('(max-width: 1366px)')
-  const { showModal } = useUrbisContext()
+  const [noteMenu, setNoteMenu] = useState(false)
+  const { notification, setNotification, showModal, setShowModal } =
+    useUrbisContext()
+  console.log('teste', notification)
+  console.log('teste nota', noteMenu)
+
+  const handleNotes = (e: any) => {
+    e.preventDefault()
+    setNotification(false)
+    {
+      notification ? setNoteMenu(true) : setNoteMenu(false)
+    }
+  }
+
+  const closeMenu = (e: any) => {
+    e.preventDefault()
+    setNoteMenu(!noteMenu)
+    setShowModal(true)
+  }
 
   return (
     <header className={styles.header}>
+      {showModal && <Modal setOpenModal={setShowModal} />}
       {desktop ? (
         <nav className={styles.nav}>
           <Link className={styles.logo} href={'/LoginPage'}>
@@ -32,13 +54,38 @@ const Navbar = () => {
                 <FaRegQuestionCircle />
               </IconContext.Provider>
             </Link>
-            <Link href={'/LoginPage'}>
+            <div
+              className={`${
+                noteMenu ? styles.notes_menu_open : styles.notes_menu
+              }`}
+            >
+              {noteMenu ? (
+                <div>
+                  <div>
+                    <h1>Você usou um cupom! Responda nossa pesquisa</h1>
+                    <button onClick={closeMenu}>Responder</button>
+                  </div>
+                </div>
+              ) : (
+                <div></div>
+              )}
+            </div>
+            <button className={styles.btn_notification} onClick={handleNotes}>
               <IconContext.Provider
                 value={{ size: '25px', color: 'var(--primary-color)' }}
               >
-                <FaRegBell /> {showModal ? 'ativo' : ''}
+                {notification ? (
+                  <div className={styles.notification_wrapper}>
+                    <div className={styles.notification}>
+                      <span className={styles.notification_count}>1</span>
+                    </div>
+                    <FaRegBell />
+                  </div>
+                ) : (
+                  <FaRegBell />
+                )}
               </IconContext.Provider>
-            </Link>
+            </button>
             <Link href={'/LoginPage'}>
               <IconContext.Provider
                 value={{ size: '25px', color: 'var(--primary-color)' }}
@@ -92,15 +139,39 @@ const Navbar = () => {
               <a>Ajuda</a>
             </Link>
           </div>
-
+          <div
+            className={`${
+              noteMenu ? styles.notes_menu_open : styles.notes_menu
+            }`}
+          >
+            {noteMenu ? (
+              <div>
+                <div className={styles.notes_menu_container}>
+                  <h1>Você usou um cupom! Responda nossa pesquisa.</h1>
+                  <Button onClick={closeMenu}>Responder!</Button>
+                </div>
+              </div>
+            ) : (
+              <div></div>
+            )}
+          </div>
           <div className={styles.nav_wrapper}>
-            <Link href={'/LoginPage'}>
+            <button className={styles.btn_notification} onClick={handleNotes}>
               <IconContext.Provider
                 value={{ size: '25px', color: 'var(--primary-color)' }}
               >
-                <FaRegBell />
+                {notification ? (
+                  <div className={styles.notification_wrapper}>
+                    <div className={styles.notification}>
+                      <span className={styles.notification_count}>1</span>
+                    </div>
+                    <FaRegBell />
+                  </div>
+                ) : (
+                  <FaRegBell />
+                )}
               </IconContext.Provider>
-            </Link>
+            </button>
             <Link href={'/LoginPage'}>
               <IconContext.Provider
                 value={{ size: '25px', color: 'var(--primary-color)' }}
