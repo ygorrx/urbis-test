@@ -1,7 +1,7 @@
 import React from 'react'
 import styles from '../../styles/Modal.module.css'
 
-function Modal({ setOpenModal }) {
+function ModalSecond({ setOpenModal }) {
   return (
     <div className={styles.modalBackground}>
       <div className={styles.modalContainer}>
@@ -36,4 +36,4 @@ function Modal({ setOpenModal }) {
   )
 }
 
-export default Modal
+export default ModalSecond
