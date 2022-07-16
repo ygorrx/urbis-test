@@ -25,7 +25,7 @@ export function ModalThird() {
         </div>
         <div className={styles.body}>
           <p>
-            Sua resposta foi resgistrada com sucesso. Agradecemos muito por você
+            Sua resposta foi registrada com sucesso. Agradecemos muito por você
             ter dedicado esse tempo para nos ajudar a tornar nosso clube cada
             vez melhor.
           </p>
