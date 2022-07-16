@@ -10,7 +10,7 @@
     padding: 0 10px;
   }
 
-  .logoAnimal{
+  .logo_clinic{
     width: 100px;
     height: 100px;
   }
@@ -148,8 +148,7 @@
     margin: 2rem 0;
     height: 150px;
     background: var(--secondary-color);
-  
-}
+ }
 
 .notes_menu_container > h1 {
   font-size: 12px;
@@ -300,4 +299,11 @@
   }
 }
 
+  .notes_menu_container{
+    width: 100%;
+    padding: 2rem 1rem;
+    margin: 2rem 0;
+    height: 150px;
+    background: var(--secondary-color);
+  }
 }
