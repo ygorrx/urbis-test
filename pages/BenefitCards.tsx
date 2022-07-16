@@ -1,13 +1,11 @@
-import React, { useState, useEffect } from 'react'
+import React, { useEffect } from 'react'
 import styles from '../styles/BenefitCards.module.css'
-import Button from '../src/components/Button'
 import axios from 'axios'
 import { useUrbisContext } from '../src/context/context'
 
 const LoggedPage = () => {
-  const { benefitList, setBenefitList, notification, setNotification } =
+  const { benefitList, setBenefitList, setNotification, setBenefitName } =
     useUrbisContext()
-  console.log('benefit list contexto', benefitList)
 
   useEffect(() => {
     const token = localStorage.getItem('token')
@@ -25,9 +23,13 @@ const LoggedPage = () => {
       })
   }, [])
 
-  const handleSubmit = (e: React.MouseEvent<HTMLButtonElement>) => {
+  const handleSubmit = (
+    e: React.MouseEvent<HTMLButtonElement>,
+    benefitName: string
+  ) => {
     e.preventDefault()
     setNotification(true)
+    setBenefitName(benefitName)
   }
 
   return (
@@ -59,7 +61,12 @@ const LoggedPage = () => {
                     </h2>
                   </div>
                   <div className={styles.button_wrapper}>
-                    <Button onClick={handleSubmit}>Garantir desconto!</Button>
+                    <button
+                      className={styles.btn_coupon}
+                      onClick={(e) => handleSubmit(e, card.title)}
+                    >
+                      Garantir desconto
+                    </button>
                   </div>
                 </div>
               </div>

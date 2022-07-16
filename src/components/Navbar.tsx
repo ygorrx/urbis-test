@@ -22,8 +22,14 @@ const Navbar = () => {
 
   const [noteMenu, setNoteMenu] = useState(false)
 
-  const { notification, setNotification, showModal, setShowModal, modalStep } =
-    useUrbisContext()
+  const {
+    notification,
+    setNotification,
+    showModal,
+    setShowModal,
+    modalStep,
+    user
+  } = useUrbisContext()
 
   const handleNotes = () => {
     if (!notification) return
@@ -50,7 +56,7 @@ const Navbar = () => {
       {desktop ? (
         <nav className={styles.nav}>
           <Link className={styles.logo} href={'/LoginPage'}>
-            <div className={styles.logoAnimal}>
+            <div className={styles.logo_clinic}>
               <Image src="/assets/logo.png" width="100" height="100" />
             </div>
           </Link>
@@ -69,9 +75,9 @@ const Navbar = () => {
             >
               {noteMenu ? (
                 <div>
-                  <div>
+                  <div className={styles.notes_menu_container}>
                     <h1>Você usou um cupom! Responda nossa pesquisa</h1>
-                    <button onClick={openSearch}>Responder</button>
+                    <Button onClick={openSearch}>Responder!</Button>
                   </div>
                 </div>
               ) : (
@@ -123,7 +129,7 @@ const Navbar = () => {
       ) : (
         <nav className={styles.nav}>
           <Link className={styles.logo} href={'/LoginPage'}>
-            <div className={styles.logoAnimal}>
+            <div className={styles.logo_clinic}>
               <Image src="/assets/logo.png" width="100" height="100" />
             </div>
           </Link>
@@ -147,6 +153,7 @@ const Navbar = () => {
               <a>Ajuda</a>
             </Link>
           </div>
+          <h3>Olá, {user?.name}</h3>
           <div
             className={`${
               noteMenu ? styles.notes_menu_open : styles.notes_menu

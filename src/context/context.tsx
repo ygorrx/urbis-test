@@ -15,6 +15,7 @@ import {
 
 export const defaultValues: UrbisContextProps = {
   user: null,
+  benefitName: '',
   modalSteps: {
     stepFirst: {
       isAlreadyUsed: false
@@ -38,7 +39,8 @@ export const defaultValues: UrbisContextProps = {
   addUser: () => false,
   setModalStep: () => undefined,
   setModalSteps: () => undefined,
-  resetModalSteps: () => undefined
+  resetModalSteps: () => undefined,
+  setBenefitName: () => false
 }
 
 export const UrbisContext = createContext<UrbisContextProps>(defaultValues)
@@ -47,6 +49,8 @@ export const useUrbisContext = () => useContext(UrbisContext)
 
 export const UrbisContextProvider = ({ children }: ContextChildrenProps) => {
   const [user, setUser] = useState<User | null>(null)
+
+  const [benefitName, setBenefitName] = useState<string>('')
 
   const [modalSteps, setModalSteps] = useState(defaultValues.modalSteps)
 
@@ -91,7 +95,9 @@ export const UrbisContextProvider = ({ children }: ContextChildrenProps) => {
         notification,
         setNotification,
         addUser,
-        resetModalSteps
+        resetModalSteps,
+        benefitName,
+        setBenefitName
       }}
     >
       {children}

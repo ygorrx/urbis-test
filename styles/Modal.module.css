@@ -1,7 +1,152 @@
+@media ( min-width: 360px ) {
+
+  .modal_background {
+      width: 100vw;
+      height: 100vh;
+      background-color: rgba(255, 255, 255, 0.7);
+      position: fixed;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 10000;
+    }
+    
+    .modal_container {
+      width: 90%;
+      height: 90%;
+      border-radius: 12px;
+      background-color: white;
+      box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+      display: flex;
+      flex-direction: column;
+      padding: 25px;
+    }
+    
+    .modal_container .title {
+      display: inline-block;
+      text-align: center;
+    }
+    
+    .title > h1 {
+      margin: 0;
+    }
+      
+    .modal_container .body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 1.2rem;
+      text-align: center;
+      margin: 0 10px;
+    }
+  
+    .btn_container{
+      display:flex;
+      width: 100%;
+      flex-direction: column;
+      }
+  
+    .btn_confirm {
+      width: 100%;
+      height: 65px;
+      margin-bottom: 1.2rem;
+      border: 2px solid #cfcfcf;
+      background-color: transparent;
+      color: #6c6c6c;
+      border-radius: 8px;
+      font-size: 20px;
+      cursor: pointer;
+      position: relative;
+    }
+  
+    .btn_confirm:focus {
+      border: none;
+      background-color: #fadeae;
+      color: #151515;
+      font-weight: bold;
+      border-radius: 8px;
+      font-size: 20px;
+      cursor: pointer;
+    }
+  
+    .btn_negate {
+      width: 100%;
+      height: 65px;
+      margin-bottom: 1.2rem;
+      border: 2px solid #cfcfcf;
+      background-color: transparent;
+      color: #6c6c6c;
+      border-radius: 8px;
+      font-size: 20px;
+      cursor: pointer;
+      position: relative;
+    }
+  
+    .btn_negate:focus {
+      border: none;
+      background-color: #ff7575;
+      color: #151515;
+      font-weight: bold;
+      border-radius: 8px;
+      font-size: 20px;
+      cursor: pointer;
+    }
+  
+    .modal_container .footer {
+      display: flex;
+      margin-top: 1rem;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    .btn_cancel {
+      width: 100%;
+      height: 65px;
+      margin: 10px;
+      border: 2px solid var(--secondary-color);
+      background-color: transparent;
+      color: var(--secondary-color);
+      border-radius: 8px;
+      font-size: 20px;
+      cursor: pointer;
+    }
+  
+    .btn_cancel:hover {
+      border: 2px solid var(--secondary-color);
+      background-color: var(--secondary-color);
+      color: white;
+    }
+  
+    .btn_save {
+      width: 100%;
+      height: 65px;
+      margin: 10px;
+      border: none;
+      background-color: var(--secondary-color);
+      color: white;
+      border-radius: 8px;
+      font-size: 20px;
+      cursor: pointer;
+    }
+  
+    .btn_save:disabled{
+      opacity: 0.5;
+      cursor: wait;
+    }
+  
+    .image_icon {
+      margin: 0 auto;
+    }
+  
+  }
+
+
+@media ( min-width: 1360px ) {
+
 .modal_background {
     width: 100vw;
     height: 100vh;
-    background-color: rgba(200, 200, 200);
+    background-color: rgba(255, 255, 255, 0.7);
     position: fixed;
     display: flex;
     justify-content: center;
@@ -10,8 +155,8 @@
   }
   
   .modal_container {
-    width: 600px;
-    height: 700px;
+    width: 800px;
+    height: 500px;
     border-radius: 12px;
     background-color: white;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
@@ -23,34 +168,26 @@
   .modal_container .title {
     display: inline-block;
     text-align: center;
-    margin-top: 10px;
   }
   
-  .title_close_btn {
-    display: flex;
-    justify-content: flex-end;
+  .title > h1 {
+    margin: 0;
   }
-  
-  .title_close_btn button {
-    background-color: transparent;
-    border: none;
-    font-size: 25px;
-    cursor: pointer;
-  }
-  
+    
   .modal_container .body {
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 1.2rem;
     text-align: center;
+    margin: 0 10px;
   }
 
   .btn_container{
     display:flex;
     width: 100%;
     flex-direction: column;
-  }
+    }
 
   .btn_confirm {
     width: 100%;
@@ -100,7 +237,7 @@
 
   .modal_container .footer {
     display: flex;
-    margin-top: 2rem;
+    margin-top: 1rem;
     justify-content: center;
     align-items: center;
   }
@@ -134,3 +271,14 @@
     font-size: 20px;
     cursor: pointer;
   }
+
+  .btn_save:disabled{
+    opacity: 0.5;
+    cursor: wait;
+  }
+
+  .image_icon {
+    margin: 0 auto;
+  }
+
+}
