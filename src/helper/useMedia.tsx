@@ -1,7 +1,7 @@
 import React from 'react'
 
-const useMedia = (media) => {
-  const [match, setMatch] = React.useState(null)
+const useMedia = (media: string) => {
+  const [match, setMatch] = React.useState<boolean | null>(null)
 
   React.useEffect(() => {
     function changeMatch() {
