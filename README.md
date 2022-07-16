@@ -1,34 +1,79 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<div id="top"></div>
 
-## Getting Started
+[![LinkedIn][linkedin-shield]][linkedin-url]
 
-First, run the development server:
+## About The Project
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+[![Product Name Screen Shot][product-screenshot]](https://ygormoreira-portfolio.vercel.app/)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Teste de software feito para a empresa Urbis. Para logar na aplicaçao utilizar os logins/senha/id disponibilizados na API para o teste.
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+<p align="right">(<a href="#top">back to top</a>)</p>
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+### Built With
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+- [Next.js](https://nextjs.org/)
+- [React Icons](https://react-icons.github.io/react-icons/)
+- CSS Modules
+- [Axios](https://axios-http.com/ptbr/)
+- [Typescript](https://www.typescriptlang.org/docs/handbook/intro.html)
 
-## Learn More
+<p align="right">(<a href="#top">back to top</a>)</p>
 
-To learn more about Next.js, take a look at the following resources:
+### Installation
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. Clone the repo
+   ```sh
+   git clone https://github.com/ygorrx/urbis-test.git
+   ```
+2. Install NPM packages
+   ```sh
+   npm install
+   ```
+3. run the development server
+   ```sh
+   npm run dev
+   ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+<p align="right">(<a href="#top">back to top</a>)</p>
 
-## Deploy on Vercel
+## What I learned
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- Pude aprender e praticar diversos conceitos de desenvolvimento nesse projeto. Next, typescript, consumo de API, controle de estados, contexto etc. O teste num geral me pareceu num nivel mais pleno, mas dei meu máximo para cobrir tudo que foi pedido.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+<!-- LICENSE -->
+
+## License
+
+Distributed under the MIT License. See `LICENSE.txt` for more information.
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+<!-- CONTACT -->
+
+## Contact
+
+My Linkedin: [https://www.linkedin.com/in/ygor-moreira-226672214/](https://www.linkedin.com/in/ygor-moreira-226672214/)
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+<!-- MARKDOWN LINKS & IMAGES -->
+<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+
+[contributors-shield]: https://img.shields.io/github/contributors/othneildrew/Best-README-Template.svg?style=for-the-badge
+[contributors-url]: https://github.com/othneildrew/Best-README-Template/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/othneildrew/Best-README-Template.svg?style=for-the-badge
+[forks-url]: https://github.com/othneildrew/Best-README-Template/network/members
+[stars-shield]: https://img.shields.io/github/stars/othneildrew/Best-README-Template.svg?style=for-the-badge
+[stars-url]: https://github.com/othneildrew/Best-README-Template/stargazers
+[issues-shield]: https://img.shields.io/github/issues/othneildrew/Best-README-Template.svg?style=for-the-badge
+[issues-url]: https://github.com/othneildrew/Best-README-Template/issues
+[license-shield]: https://img.shields.io/github/license/othneildrew/Best-README-Template.svg?style=for-the-badge
+[license-url]: https://github.com/othneildrew/Best-README-Template/blob/master/LICENSE.txt
+[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
+[linkedin-url]: https://www.linkedin.com/in/ygor-moreira-226672214/
+[product-screenshot]: https://i.imgur.com/VogI9H8.png
+
