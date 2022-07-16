@@ -1,7 +1,7 @@
 .modal_background {
     width: 100vw;
     height: 100vh;
-    background-color: rgba(200, 200, 200);
+    background-color: rgba(255, 255, 255, 0.7);
     position: fixed;
     display: flex;
     justify-content: center;
@@ -10,8 +10,8 @@
   }
   
   .modal_container {
-    width: 600px;
-    height: 700px;
+    width: 800px;
+    height: 500px;
     border-radius: 12px;
     background-color: white;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
@@ -23,34 +23,26 @@
   .modal_container .title {
     display: inline-block;
     text-align: center;
-    margin-top: 10px;
   }
   
-  .title_close_btn {
-    display: flex;
-    justify-content: flex-end;
+  .title > h1 {
+    margin: 0;
   }
-  
-  .title_close_btn button {
-    background-color: transparent;
-    border: none;
-    font-size: 25px;
-    cursor: pointer;
-  }
-  
+    
   .modal_container .body {
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 1.2rem;
     text-align: center;
+    margin: 0 10px;
   }
 
   .btn_container{
     display:flex;
     width: 100%;
     flex-direction: column;
-  }
+    }
 
   .btn_confirm {
     width: 100%;
@@ -100,7 +92,7 @@
 
   .modal_container .footer {
     display: flex;
-    margin-top: 2rem;
+    margin-top: 1rem;
     justify-content: center;
     align-items: center;
   }
@@ -133,4 +125,13 @@
     border-radius: 8px;
     font-size: 20px;
     cursor: pointer;
+  }
+
+  .btn_save:disabled{
+    opacity: 0.5;
+    cursor: wait;
+  }
+
+  .image_icon {
+    margin: 0 auto;
   }
