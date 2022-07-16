@@ -4,7 +4,7 @@
 
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://ygormoreira-portfolio.vercel.app/)
+[![Product Name Screen Shot]](https://ygormoreira-portfolio.vercel.app/)
 
 Teste de software feito para a empresa Urbis. Para logar na aplicaçao utilizar os logins/senha/id disponibilizados na API para o teste.
 
