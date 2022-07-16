@@ -1,5 +1,23 @@
 import React, { HTMLAttributes, ReactNode } from 'react'
 
+export type ModalStep = 'stepFirst' | 'stepSecond' | 'stepThird' | 'stepFail'
+
+export interface ModalSteps {
+  stepFirst: {
+    isAlreadyUsed: boolean
+  }
+  stepSecond: {
+    feedback: string
+    comment: string
+  }
+  stepThird: void
+  stepFail: boolean
+}
+
+export interface User {
+  name: string
+}
+
 export interface IBenefits {
   image?: string
   title: string
@@ -7,26 +25,25 @@ export interface IBenefits {
   discount: string
   rules: string
 }
-export interface IData {
-  name: string
-  email: string
-}
 
 export interface ContextChildrenProps {
   children: ReactNode
 }
 
 export interface UrbisContextProps {
+  user: User | null
   benefitList: IBenefits[] | []
   setBenefitList: React.Dispatch<React.SetStateAction<never[]>>
   showModal: boolean
   setShowModal: React.Dispatch<React.SetStateAction<boolean>>
-  openModal: boolean
-  setOpenModal: React.Dispatch<React.SetStateAction<boolean>>
   notification: boolean
   setNotification: React.Dispatch<React.SetStateAction<boolean>>
-  apiData: IData[] | []
-  setApiData: React.Dispatch<React.SetStateAction<never[]>>
+  addUser: (user: User) => void
+  modalSteps: ModalSteps
+  setModalSteps: React.Dispatch<React.SetStateAction<ModalSteps>>
+  modalStep: ModalStep
+  setModalStep: React.Dispatch<React.SetStateAction<ModalStep>>
+  resetModalSteps: () => void
 }
 
 export interface ButtonProps extends HTMLAttributes<HTMLButtonElement> {

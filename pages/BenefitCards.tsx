@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import styles from '../styles/BenefitCards.module.css'
-import Button from './components/Button'
+import Button from '../src/components/Button'
 import axios from 'axios'
-import { useUrbisContext } from './context/context'
+import { useUrbisContext } from '../src/context/context'
 
 const LoggedPage = () => {
   const { benefitList, setBenefitList, notification, setNotification } =

@@ -12,33 +12,41 @@ import {
 import useMedia from '../helper/useMedia'
 import { useUrbisContext } from '../context/context'
 import Button from './Button'
-import Modal from './Step_1'
+import { ModalFirst } from './Modal'
+import { ModalSecond } from './Modal_2'
+import { ModalThird } from './Modal_3'
+import { ModalFail } from './ModalFail'
 
 const Navbar = () => {
   const desktop = useMedia('(max-width: 1366px)')
-  const [noteMenu, setNoteMenu] = useState(false)
-  const { notification, setNotification, showModal, setShowModal } =
-    useUrbisContext()
-  console.log('teste', notification)
-  console.log('teste nota', noteMenu)
 
-  const handleNotes = (e: React.MouseEvent<HTMLButtonElement>) => {
-    e.preventDefault()
+  const [noteMenu, setNoteMenu] = useState(false)
+
+  const { notification, setNotification, showModal, setShowModal, modalStep } =
+    useUrbisContext()
+
+  const handleNotes = () => {
+    if (!notification) return
+
+    setNoteMenu(true)
     setNotification(false)
-    {
-      notification ? setNoteMenu(true) : setNoteMenu(false)
-    }
   }
 
-  const closeMenu = (e: React.MouseEvent<HTMLButtonElement>) => {
-    e.preventDefault()
+  const openSearch = () => {
     setNoteMenu(!noteMenu)
     setShowModal(true)
   }
 
   return (
     <header className={styles.header}>
-      {showModal && <Modal />}
+      {showModal && (
+        <>
+          {modalStep === 'stepFirst' && <ModalFirst />}
+          {modalStep === 'stepSecond' && <ModalSecond />}
+          {modalStep === 'stepThird' && <ModalThird />}
+          {modalStep === 'stepFail' && <ModalFail />}
+        </>
+      )}
       {desktop ? (
         <nav className={styles.nav}>
           <Link className={styles.logo} href={'/LoginPage'}>
@@ -63,7 +71,7 @@ const Navbar = () => {
                 <div>
                   <div>
                     <h1>Você usou um cupom! Responda nossa pesquisa</h1>
-                    <button onClick={closeMenu}>Responder</button>
+                    <button onClick={openSearch}>Responder</button>
                   </div>
                 </div>
               ) : (
@@ -148,7 +156,7 @@ const Navbar = () => {
               <div>
                 <div className={styles.notes_menu_container}>
                   <h1>Você usou um cupom! Responda nossa pesquisa.</h1>
-                  <Button onClick={closeMenu}>Responder!</Button>
+                  <Button onClick={openSearch}>Responder!</Button>
                 </div>
               </div>
             ) : (
