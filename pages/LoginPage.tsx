@@ -3,16 +3,19 @@ import axios from 'axios'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import { useRouter } from 'next/router'
-import { useUrbisContext } from './context/context'
+import Button from '../src/components/Button'
+import { useUrbisContext } from '../src/context/context'
 
 const LoginPage = () => {
   const router = useRouter()
-  const { apiData, setApiData } = useUrbisContext()
+  const [apiData, setApiData] = useState([])
   const [data, setData] = useState({
     email: '',
     password: '',
     whitelabelId: ''
   })
+
+  const { addUser } = useUrbisContext()
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     const value = e.currentTarget.value
@@ -35,9 +38,11 @@ const LoginPage = () => {
       .post('https://new-api.urbis.cc/auth/user', userData)
       .then((response) => {
         console.log(response.status)
-        console.log(response.data)
+        console.log('Data: ', response.data)
         setApiData(response.data)
-        console.log(apiData)
+
+        addUser(response.data.user)
+
         localStorage.setItem('token', response.data.access_token)
       })
   }
@@ -89,7 +94,7 @@ const LoginPage = () => {
               className={styles.input}
             />
 
-            <button type="submit">Login</button>
+            <Button>Login</Button>
           </form>
         </div>
       </div>
