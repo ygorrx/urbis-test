@@ -16,11 +16,8 @@ import { ModalFirst } from './Modal'
 import { ModalSecond } from './Modal_2'
 import { ModalThird } from './Modal_3'
 import { ModalFail } from './ModalFail'
-import { useRouter } from 'next/router'
 
 const Navbar = () => {
-  const router = useRouter()
-
   const desktop = useMedia('(max-width: 1366px)')
 
   const [noteMenu, setNoteMenu] = useState(false)
@@ -44,12 +41,6 @@ const Navbar = () => {
   const openSearch = () => {
     setNoteMenu(!noteMenu)
     setShowModal(true)
-  }
-
-  const userLogout = () => {
-    localStorage.removeItem('token')
-    localStorage.removeItem('@urbis/user')
-    router.push('/LoginPage')
   }
 
   return (
@@ -162,7 +153,7 @@ const Navbar = () => {
               <a>Ajuda</a>
             </Link>
           </div>
-          {user ? <h3>Olá, {user?.name}</h3> : ''}
+          <h3>Olá, {user?.name}</h3>
           <div
             className={`${
               noteMenu ? styles.notes_menu_open : styles.notes_menu
@@ -196,13 +187,13 @@ const Navbar = () => {
                 )}
               </IconContext.Provider>
             </button>
-            <button onClick={userLogout}>
+            <Link href={'/LoginPage'}>
               <IconContext.Provider
                 value={{ size: '25px', color: 'var(--primary-color)' }}
               >
                 <FaRegUserCircle />
               </IconContext.Provider>
-            </button>
+            </Link>
           </div>
         </nav>
       )}
