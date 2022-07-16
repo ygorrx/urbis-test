@@ -25,7 +25,7 @@ const LoggedPage = () => {
       })
   }, [])
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault()
     setNotification(true)
   }

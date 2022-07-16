@@ -12,7 +12,7 @@ import {
 import useMedia from '../helper/useMedia'
 import { useUrbisContext } from '../context/context'
 import Button from './Button'
-import Modal from './Modal_1'
+import Modal from './Step_1'
 
 const Navbar = () => {
   const desktop = useMedia('(max-width: 1366px)')
@@ -22,7 +22,7 @@ const Navbar = () => {
   console.log('teste', notification)
   console.log('teste nota', noteMenu)
 
-  const handleNotes = (e: any) => {
+  const handleNotes = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault()
     setNotification(false)
     {
@@ -30,7 +30,7 @@ const Navbar = () => {
     }
   }
 
-  const closeMenu = (e: any) => {
+  const closeMenu = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault()
     setNoteMenu(!noteMenu)
     setShowModal(true)
@@ -38,7 +38,7 @@ const Navbar = () => {
 
   return (
     <header className={styles.header}>
-      {showModal && <Modal setOpenModal={setShowModal} />}
+      {showModal && <Modal />}
       {desktop ? (
         <nav className={styles.nav}>
           <Link className={styles.logo} href={'/LoginPage'}>

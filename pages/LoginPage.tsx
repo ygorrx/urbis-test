@@ -2,12 +2,12 @@ import React, { ChangeEvent, MouseEvent, useEffect, useState } from 'react'
 import axios from 'axios'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
-import Button from './components/Button'
 import { useRouter } from 'next/router'
+import { useUrbisContext } from './context/context'
 
 const LoginPage = () => {
   const router = useRouter()
-  const [apiData, setApiData] = useState([])
+  const { apiData, setApiData } = useUrbisContext()
   const [data, setData] = useState({
     email: '',
     password: '',
@@ -89,7 +89,7 @@ const LoginPage = () => {
               className={styles.input}
             />
 
-            <Button>Login</Button>
+            <button type="submit">Login</button>
           </form>
         </div>
       </div>

@@ -1,8 +1,9 @@
 import React from 'react'
 import Head from 'next/head'
 import Navbar from './Navbar'
+import { ContextChildrenProps } from '../types/types'
 
-const Layout = ({ children }) => {
+const Layout = ({ children }: ContextChildrenProps) => {
   return (
     <>
       <Head>

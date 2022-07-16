@@ -6,8 +6,12 @@ export const defaultValues: UrbisContextProps = {
   setBenefitList: () => [],
   showModal: false,
   setShowModal: () => false,
+  openModal: false,
+  setOpenModal: () => false,
   notification: false,
-  setNotification: () => false
+  setNotification: () => false,
+  apiData: [],
+  setApiData: () => []
 }
 
 export const UrbisContext = createContext<UrbisContextProps>(defaultValues)
@@ -17,7 +21,9 @@ export const useUrbisContext = () => useContext(UrbisContext)
 export const UrbisContextProvider = ({ children }: ContextChildrenProps) => {
   const [benefitList, setBenefitList] = useState([])
   const [showModal, setShowModal] = useState(false)
+  const [openModal, setOpenModal] = useState(false)
   const [notification, setNotification] = useState(false)
+  const [apiData, setApiData] = useState([])
 
   return (
     <UrbisContext.Provider
@@ -27,7 +33,11 @@ export const UrbisContextProvider = ({ children }: ContextChildrenProps) => {
         showModal,
         setShowModal,
         notification,
-        setNotification
+        setNotification,
+        apiData,
+        setApiData,
+        openModal,
+        setOpenModal
       }}
     >
       {children}

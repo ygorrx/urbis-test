@@ -15,6 +15,6 @@
     "jsx": "preserve",
     "incremental": true
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "pages/components/Buttonjs", "pages/BenefitCards.js", "pages/components/Button.js", "pages/LoginPage.js"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "pages/components/Buttonjs", "pages/BenefitCards.tsx", "pages/components/Button.tsx", "pages/LoginPage.js"],
   "exclude": ["node_modules"]
 }
