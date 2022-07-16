@@ -8,6 +8,10 @@ export function ModalFirst() {
     useUrbisContext()
   const [pressButton, setPressButton] = useState(false)
   console.log('button', pressButton)
+  const current = new Date()
+  const date = `${current.getDate()}/${
+    current.getMonth() + 1
+  }/${current.getFullYear()}`
 
   const handleNegate = () => {
     setModalSteps({
@@ -50,8 +54,9 @@ export function ModalFirst() {
         </div>
         <div className={styles.body}>
           <p>
-            Identificamos que você acessou o site do parceiro tal no dia
-            00/00/0000. Você pode nos dizer se utilizou um benefício na ocasião?
+            Identificamos que você acessou o site de um dos nossos parceiros no
+            dia {''}
+            {date}. Você pode nos dizer se utilizou um benefício na ocasião?
           </p>
         </div>
         <div className={styles.btn_container}>
