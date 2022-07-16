@@ -18,6 +18,10 @@ export interface User {
   name: string
 }
 
+export interface BenefitName {
+  benefitName: string | null
+}
+
 export interface IBenefits {
   image?: string
   title: string
@@ -32,6 +36,7 @@ export interface ContextChildrenProps {
 
 export interface UrbisContextProps {
   user: User | null
+  benefitName: string
   benefitList: IBenefits[] | []
   setBenefitList: React.Dispatch<React.SetStateAction<never[]>>
   showModal: boolean
@@ -44,6 +49,7 @@ export interface UrbisContextProps {
   modalStep: ModalStep
   setModalStep: React.Dispatch<React.SetStateAction<ModalStep>>
   resetModalSteps: () => void
+  setBenefitName: React.Dispatch<React.SetStateAction<string>>
 }
 
 export interface ButtonProps extends HTMLAttributes<HTMLButtonElement> {
