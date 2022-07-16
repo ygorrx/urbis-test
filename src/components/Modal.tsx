@@ -4,10 +4,16 @@ import { useUrbisContext } from '../context/context'
 import Image from 'next/image'
 
 export function ModalFirst() {
-  const { user, modalSteps, setModalStep, setModalSteps, setShowModal } =
-    useUrbisContext()
+  const {
+    user,
+    modalSteps,
+    setModalStep,
+    setModalSteps,
+    setShowModal,
+    benefitName
+  } = useUrbisContext()
   const [pressButton, setPressButton] = useState(false)
-  console.log('button', pressButton)
+  const [answer, setAnswer] = useState('')
   const current = new Date()
   const date = `${current.getDate()}/${
     current.getMonth() + 1
@@ -19,6 +25,7 @@ export function ModalFirst() {
       stepFail: true
     })
     setPressButton(true)
+    setAnswer('Nao. Eu nao utilizei um benefício.')
   }
 
   const handleConfirm = () => {
@@ -29,6 +36,7 @@ export function ModalFirst() {
       }
     })
     setPressButton(true)
+    setAnswer('Sim. Eu utilizei um benefício.')
   }
 
   const buttonOnFocus = () => {
@@ -38,6 +46,7 @@ export function ModalFirst() {
 
   const saveAnswer = () => {
     setModalStep(modalSteps.stepFail ? 'stepFail' : 'stepSecond')
+    localStorage.setItem('Resposta do usuario', answer)
   }
 
   return (
@@ -54,7 +63,8 @@ export function ModalFirst() {
         </div>
         <div className={styles.body}>
           <p>
-            Identificamos que você acessou o site de um dos nossos parceiros no
+            Identificamos que você acessou o site do parceiro{' '}
+            <strong>{benefitName}</strong> {''}
             dia {''}
             {date}. Você pode nos dizer se utilizou um benefício na ocasião?
           </p>
