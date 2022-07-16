@@ -1,7 +1,7 @@
 import '../styles/globals.css'
-import Layout from './components/Layout'
+import Layout from '../src/components/Layout'
 import type { AppProps } from 'next/app'
-import { UrbisContextProvider } from './context/context'
+import { UrbisContextProvider } from '../src/context/context'
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
