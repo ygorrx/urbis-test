@@ -13,7 +13,10 @@ export function ModalSecond() {
   console.log('botao', pressButton)
   console.log('botao escolhido', buttonChosen)
 
-  const buttonToTrue = () => {
+  const buttonToTrue = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault()
+    const getAnswer = e.currentTarget.innerHTML
+    localStorage.setItem('Resposta do usuario', getAnswer)
     setPressButton(true)
     setButtonChosen(false)
   }
